@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+    <div id="app">
+        <GetRecipeBtn @receivedNewRecipe="setRecipe" />
+        <DisplayRecipe :recipe="this.recipe" />
+    </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import GetRecipeBtn from "./components/GetRecipeBtn.vue";
+import DisplayRecipe from "./components/DisplayRecipe.vue";
 export default {
-  name: "App",
-  components: {
-    HelloWorld
-  }
+    name: "App",
+    components: {
+        GetRecipeBtn,
+        DisplayRecipe
+    },
+    data: function() {
+        return {
+            recipe: {}
+        };
+    },
+    methods: {
+        setRecipe(newRecipe) {
+            this.recipe = newRecipe;
+        }
+    }
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "@/styles/index.scss";
 </style>
