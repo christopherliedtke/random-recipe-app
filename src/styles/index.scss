@@ -134,10 +134,3 @@ a {
         background-color: $secondary;
     }
 }
-
-.btn-secondary {
-    @extend %btn;
-
-    &:hover {
-    }
-}
