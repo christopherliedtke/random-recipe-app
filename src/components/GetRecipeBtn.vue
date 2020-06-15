@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="search">
         <select
             v-if="categories.length > 0"
             v-model="selectedCategory"
@@ -11,7 +11,7 @@
                 {{ category.strCategory }}
             </option>
         </select>
-        <button @click="getRecipes">Random Recipe</button>
+        <button class="btn-primary" @click="getRecipes">Random Recipe</button>
     </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
     },
     created() {
         this.getAllCategories();
+        this.getRecipes();
     },
 
     methods: {

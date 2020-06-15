@@ -1,8 +1,8 @@
 <template>
-    <div id="app">
+    <main id="app">
         <GetRecipeBtn @receivedNewRecipe="setRecipe" />
         <DisplayRecipe :recipe="this.recipe" />
-    </div>
+    </main>
 </template>
 
 <script>
